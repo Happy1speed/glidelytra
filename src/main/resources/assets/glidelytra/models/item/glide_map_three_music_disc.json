@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "glidelytra:item/glide_map_three_music_disc"
+  }
+}

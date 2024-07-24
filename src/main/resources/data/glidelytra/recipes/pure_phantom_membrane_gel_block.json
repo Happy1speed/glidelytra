@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    "WSW",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:gold_block"
+    },
+    "S": {
+      "item": "glidelytra:phantom_membrane_gel_block"
+    }
+  },
+  "result": {
+    "item": "glidelytra:pure_phantom_membrane_gel_block",
+    "count": 4
+  }
+}

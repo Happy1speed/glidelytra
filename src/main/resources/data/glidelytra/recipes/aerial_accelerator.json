@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WUW",
+    "WSW",
+    "WUW"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "item": "minecraft:ender_pearl"
+    },
+    "U": {
+      "item": "minecraft:end_stone"
+    }
+  },
+  "result": {
+    "item": "glidelytra:aerial_accelerator",
+    "count": 1
+  }
+}

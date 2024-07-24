@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "glidelytra:glide_map_one_music_disc",
+    "glidelytra:glide_map_two_music_disc",
+    "glidelytra:glide_map_three_music_disc",
+    "glidelytra:glide_map_four_music_disc",
+    "glidelytra:glide_map_five_music_disc",
+    "glidelytra:glide_map_six_music_disc",
+    "glidelytra:glide_map_seven_music_disc"
+  ]
+}

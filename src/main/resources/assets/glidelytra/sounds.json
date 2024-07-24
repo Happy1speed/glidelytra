@@ -1,0 +1,64 @@
+{
+  "map_one_disc_sound": {
+    "sounds": [
+      {
+        "name": "glidelytra:map_one_disc_sound",
+        "stream": true
+      }
+    ]
+  },
+  "map_two_disc_sound": {
+    "sounds": [
+      {
+        "name": "glidelytra:map_two_disc_sound",
+        "stream": true
+      }
+    ]
+  },
+  "map_three_disc_sound": {
+    "sounds": [
+      {
+        "name": "glidelytra:map_three_disc_sound",
+        "stream": true
+      }
+    ]
+  },
+  "map_four_disc_sound": {
+    "sounds": [
+      {
+        "name": "glidelytra:map_four_disc_sound",
+        "stream": true
+      }
+    ]
+  },
+  "map_five_disc_sound": {
+    "sounds": [
+      {
+        "name": "glidelytra:map_five_disc_sound",
+        "stream": true
+      }
+    ]
+  },
+  "map_six_disc_sound": {
+    "sounds": [
+      {
+        "name": "glidelytra:map_six_disc_sound",
+        "stream": true
+      }
+    ]
+  },
+  "map_seven_disc_sound": {
+    "sounds": [
+      {
+        "name": "glidelytra:map_seven_disc_sound",
+        "stream": true
+      }
+    ]
+  },
+  "pling_sound": {
+    "subtitle": "glidelytra.pling_sound_sub",
+    "sounds": [
+       "glidelytra:pling_1"
+    ]
+  }
+}

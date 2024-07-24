@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "glidelytra:block/pure_phantom_membrane_gel_block"
+  }
+}

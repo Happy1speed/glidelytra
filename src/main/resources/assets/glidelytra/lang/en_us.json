@@ -1,0 +1,31 @@
+{
+  "block.glidelytra.aerial_accelerator": "Aerial Accelerator",
+  "block.glidelytra.phantom_membrane_gel_block": "Phantom Membrane Gel Block",
+  "block.glidelytra.smooth_phantom_membrane_gel_block": "Smooth Phantom Membrane Gel Block",
+  "block.glidelytra.pure_phantom_membrane_gel_block": "Pure Phantom Membrane Gel Block",
+
+  "item.glidelytra.glide_map_one_music_disc": "Glide: Map 1 Music Disc",
+  "item.glidelytra.glide_map_one_music_disc.desc": "Gareth Coker - Glide (Map 1)",
+
+  "item.glidelytra.glide_map_two_music_disc": "Glide: Map 2 Music Disc",
+  "item.glidelytra.glide_map_two_music_disc.desc": "Gareth Coker - Soothing Voyage (Map 2)",
+
+  "item.glidelytra.glide_map_three_music_disc": "Glide: Map 3 Music Disc",
+  "item.glidelytra.glide_map_three_music_disc.desc": "Gareth Coker - Flight of Fancy (Map 3)",
+
+  "item.glidelytra.glide_map_four_music_disc": "Glide: Map 4 Music Disc",
+  "item.glidelytra.glide_map_four_music_disc.desc": "Gareth Coker - In the Flow (Map 4)",
+
+  "item.glidelytra.glide_map_five_music_disc": "Glide: Map 5 Music Disc",
+  "item.glidelytra.glide_map_five_music_disc.desc": "Gareth Coker - Wonderful Wings (Map 5)",
+
+  "item.glidelytra.glide_map_six_music_disc": "Glide: Map 6 Music Disc",
+  "item.glidelytra.glide_map_six_music_disc.desc": "Gareth Coker - Tense Takeoff (Map 6)",
+
+  "item.glidelytra.glide_map_seven_music_disc": "Glide: Map 7 Music Disc",
+  "item.glidelytra.glide_map_seven_music_disc.desc": "Gareth Coker - Departures (Map 7)",
+
+  "glidelytra.pling_sound_sub": "Pling!",
+
+  "itemgroup.glidelytra": "Glide-lytra"
+}

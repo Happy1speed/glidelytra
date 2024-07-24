@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WSW",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "S": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "result": {
+    "item": "glidelytra:phantom_membrane_gel_block",
+    "count": 4
+  }
+}
