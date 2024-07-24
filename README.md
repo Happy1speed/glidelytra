@@ -8,6 +8,7 @@ Firework Rockets now have a cooldown and their cooldown increases slightly per f
 
 How to make the Multiblock:
 ![2024-07-23_23 00 15](https://github.com/user-attachments/assets/0b8be067-7482-49d1-8e6b-9af2989c3bf9)
+
 You may use any of the following "base blocks" instead of the stone bricks:
     "minecraft:stone_bricks",
     "minecraft:infested_stone_bricks",
@@ -47,6 +48,7 @@ You may use any of the following "chiseled blocks" in place of the chiseled ston
     "minecraft:sea_lantern",
     "minecraft:infested_chiseled_stone_bricks",
     "glidelytra:smooth_phantom_membrane_gel_block"
+
 You may use any of the following "focus blocks" in place of the gold blocks:
     "minecraft:emerald_block",
     "minecraft:gold_block",
