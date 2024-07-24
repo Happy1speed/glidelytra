@@ -6,6 +6,8 @@ These are multiblocks that boost you when you fly above them!
 
 Firework Rockets now have a cooldown and their cooldown increases slightly per flight durration but not enough to make the upgrade useless.
 
+Your Elytra will also recharge durrability when you're not flying.
+
 How to make the Multiblock:
 ![2024-07-23_23 00 15](https://github.com/user-attachments/assets/0b8be067-7482-49d1-8e6b-9af2989c3bf9)
 
