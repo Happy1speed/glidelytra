@@ -22,6 +22,20 @@
     "minecraft:polished_blackstone",
     "minecraft:polished_deepslate",
     "minecraft:polished_blackstone_bricks",
-    "glidelytra:phantom_membrane_gel_block"
+    "glidelytra:phantom_membrane_gel_block",
+    "minecraft:chiseled_stone_bricks",
+    "minecraft:chiseled_deepslate",
+    "minecraft:chiseled_quartz_block",
+    "minecraft:quartz_pillar",
+    "minecraft:chiseled_sandstone",
+    "minecraft:chiseled_red_sandstone",
+    "minecraft:dark_prismarine",
+    "minecraft:chiseled_polished_blackstone",
+    "minecraft:chiseled_nether_bricks",
+    "minecraft:shroomlight",
+    "minecraft:glowstone",
+    "minecraft:sea_lantern",
+    "minecraft:infested_chiseled_stone_bricks",
+    "glidelytra:smooth_phantom_membrane_gel_block"
   ]
 }

@@ -36,16 +36,16 @@ public class AcceleratorBlockEntity extends BlockEntity  {
     }
     public boolean checkStructure(World world, BlockPos pos, BlockState state, AcceleratorBlockEntity acc) {
         int testTally = 0;
-        if (world.getBlockState(new BlockPos(pos.getX() - 1, pos.getY(), pos.getZ())).isIn(ModTags.Blocks.BOOST_CHISELED_BLOCKS_TAG)) {
+        if (world.getBlockState(new BlockPos(pos.getX() - 1, pos.getY(), pos.getZ())).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
             testTally++;
         }
-        if (world.getBlockState(new BlockPos(pos.getX() + 1, pos.getY(), pos.getZ())).isIn(ModTags.Blocks.BOOST_CHISELED_BLOCKS_TAG)) {
+        if (world.getBlockState(new BlockPos(pos.getX() + 1, pos.getY(), pos.getZ())).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
             testTally++;
         }
-        if (world.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() - 1)).isIn(ModTags.Blocks.BOOST_CHISELED_BLOCKS_TAG)) {
+        if (world.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() - 1)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
             testTally++;
         }
-        if (world.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() + 1)).isIn(ModTags.Blocks.BOOST_CHISELED_BLOCKS_TAG)) {
+        if (world.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() + 1)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
             testTally++;
         }
         //split
@@ -100,7 +100,60 @@ public class AcceleratorBlockEntity extends BlockEntity  {
         if (world.getBlockState(new BlockPos(pos.getX() + 2, pos.getY(), pos.getZ() - 1)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
             testTally++;
         }
-        return testTally == 20;
+        //split
+        if (world.getBlockState(new BlockPos(pos.getX() - 1, pos.getY(), pos.getZ() + 3)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() + 3)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX() + 1, pos.getY(), pos.getZ() + 3)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        //split
+        if (world.getBlockState(new BlockPos(pos.getX() - 1, pos.getY(), pos.getZ() - 3)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() - 3)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX() + 1, pos.getY(), pos.getZ() - 3)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        //split
+        if (world.getBlockState(new BlockPos(pos.getX() + 3, pos.getY(), pos.getZ() + 1)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX() + 3, pos.getY(), pos.getZ())).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX() + 3, pos.getY(), pos.getZ() - 1)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        //split
+        if (world.getBlockState(new BlockPos(pos.getX() - 3, pos.getY(), pos.getZ() + 1)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX() - 3, pos.getY(), pos.getZ())).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX() - 3, pos.getY(), pos.getZ() - 1)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        //fan corners
+        if (world.getBlockState(new BlockPos(pos.getX() - 2, pos.getY(), pos.getZ() + 2)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX() + 2, pos.getY(), pos.getZ() + 2)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX() + 2, pos.getY(), pos.getZ() - 2)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        if (world.getBlockState(new BlockPos(pos.getX() - 2, pos.getY(), pos.getZ() - 2)).isIn(ModTags.Blocks.BOOST_BASE_BLOCKS_TAG)) {
+            testTally++;
+        }
+        return testTally == 36;
     }
     public boolean tryHardTest(World world, BlockPos pos, BlockState state, AcceleratorBlockEntity acc) {
         int testercount = 0;
@@ -123,7 +176,7 @@ public class AcceleratorBlockEntity extends BlockEntity  {
         if (acc.soundTimer < 40) {
             acc.soundTimer++;
         }
-        if (world.getTime() % 20 == 0) {
+        if (world.getTime() % 40 == 0) {
             acc.structureHere = acc.checkStructure(world, pos, state, acc);
         }
         if (acc.structureHere) {
