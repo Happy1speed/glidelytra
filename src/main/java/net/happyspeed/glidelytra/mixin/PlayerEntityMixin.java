@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.entity.event.v1.FabricElytraItem;
 import net.fabricmc.loader.api.FabricLoader;
 import net.happyspeed.glidelytra.GlidelytraMod;
 import net.happyspeed.glidelytra.access.ElytraItemClassAccess;
+import net.happyspeed.glidelytra.config.ModConfigs;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -124,18 +125,22 @@ abstract class PlayerEntityMixin extends LivingEntity {
 
     @Inject(method = "tick", at = @At("HEAD"))
     public void elytraTick(CallbackInfo ci) {
-        if (this.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof ElytraItem || this.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof FabricElytraItem) {
-            this.tickYourElytras(this.getEquippedStack(EquipmentSlot.CHEST), this);
+        if (!ModConfigs.CONFIGVANILLAELYTRADURRABILITY) {
+            if (this.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof ElytraItem || this.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof FabricElytraItem) {
+                this.tickYourElytras(this.getEquippedStack(EquipmentSlot.CHEST), this);
+            }
         }
     }
 
     @Inject(method = "damage", at = @At("HEAD"))
     public void elytraDisable(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-        if ((this.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof ElytraItem || this.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof FabricElytraItem) && (source.isIn(DamageTypeTags.IS_PROJECTILE) || source.isIn(DamageTypeTags.IS_EXPLOSION))) {
-            this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 0.7f, 0.8f);
-            this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, SoundCategory.PLAYERS, 0.7f, 0.8f);
-            this.disableElytras(this.getEquippedStack(EquipmentSlot.CHEST), this);
-            this.stopFallFlying();
+        if (ModConfigs.CONFIGALLOWELYTRADISABLE) {
+            if ((this.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof ElytraItem || this.getEquippedStack(EquipmentSlot.CHEST).getItem() instanceof FabricElytraItem) && (source.isIn(DamageTypeTags.IS_PROJECTILE) || source.isIn(DamageTypeTags.IS_EXPLOSION))) {
+                this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ENTITY_ITEM_BREAK, SoundCategory.PLAYERS, 0.7f, 0.8f);
+                this.getWorld().playSound(null, this.getX(), this.getY(), this.getZ(), SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, SoundCategory.PLAYERS, 0.7f, 0.8f);
+                this.disableElytras(this.getEquippedStack(EquipmentSlot.CHEST), this);
+                this.stopFallFlying();
+            }
         }
     }
 

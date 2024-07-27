@@ -1,6 +1,7 @@
 package net.happyspeed.glidelytra.mixin;
 
 import net.happyspeed.glidelytra.GlidelytraMod;
+import net.happyspeed.glidelytra.config.ModConfigs;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.FireworkRocketItem;
@@ -26,25 +27,26 @@ public class FireworkRocketItemMixin extends Item {
     }
     @Inject(method = "use", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;spawnEntity(Lnet/minecraft/entity/Entity;)Z"))
     public void stackedCooldown(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
-        if (user.isFallFlying()) {
-            ItemStack heldRocket;
-            if (hand == Hand.MAIN_HAND) {
-                heldRocket = user.getEquippedStack(EquipmentSlot.MAINHAND);
-            }
-            else {
-                heldRocket = user.getEquippedStack(EquipmentSlot.OFFHAND);
-            }
-            int f = 0;
-            if (!heldRocket.isEmpty() && heldRocket.hasNbt()) {
-                f += heldRocket.getOrCreateSubNbt("Fireworks").getByte("Flight");
-            }
-            int cooldownAmount = 240;
-            for (int i = 0; i < f; i++) {
-                cooldownAmount += 140;
-            }
-            for (int i = 0; i < user.getInventory().size(); i++) {
-                if (user.getInventory().getStack(i).isOf(Items.FIREWORK_ROCKET)) {
-                    user.getItemCooldownManager().set(user.getInventory().getStack(i).getItem(), cooldownAmount);
+        if (ModConfigs.CONFIGFIREWORKCOOLDOWN) {
+            if (user.isFallFlying()) {
+                ItemStack heldRocket;
+                if (hand == Hand.MAIN_HAND) {
+                    heldRocket = user.getEquippedStack(EquipmentSlot.MAINHAND);
+                } else {
+                    heldRocket = user.getEquippedStack(EquipmentSlot.OFFHAND);
+                }
+                int f = 0;
+                if (!heldRocket.isEmpty() && heldRocket.hasNbt()) {
+                    f += heldRocket.getOrCreateSubNbt("Fireworks").getByte("Flight");
+                }
+                int cooldownAmount = ModConfigs.CONFIGFIREWORKCOOLDOWNBASE;
+                for (int i = 0; i < f; i++) {
+                    cooldownAmount += ModConfigs.CONFIGFIREWORKCOOLDOWNMODIFIER;
+                }
+                for (int i = 0; i < user.getInventory().size(); i++) {
+                    if (user.getInventory().getStack(i).isOf(Items.FIREWORK_ROCKET)) {
+                        user.getItemCooldownManager().set(user.getInventory().getStack(i).getItem(), cooldownAmount);
+                    }
                 }
             }
         }

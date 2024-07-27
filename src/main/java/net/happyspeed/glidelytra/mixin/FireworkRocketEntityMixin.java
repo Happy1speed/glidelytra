@@ -1,6 +1,7 @@
 package net.happyspeed.glidelytra.mixin;
 
 import net.happyspeed.glidelytra.GlidelytraMod;
+import net.happyspeed.glidelytra.config.ModConfigs;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.FlyingItemEntity;
@@ -42,7 +43,7 @@ abstract class FireworkRocketEntityMixin extends ProjectileEntity
 	}
 	@Unique
 	public double boostCode(double constant) {
-		float boost = 1.7f;
+		float boost = (float) ModConfigs.CONFIGFIREWORKBOOSTAMPLIFIER;
 		if (this.shooter != null) {
 			ItemStack itemStack;
 			if (shooter.getEquippedStack(EquipmentSlot.MAINHAND).getItem() == Items.FIREWORK_ROCKET) {

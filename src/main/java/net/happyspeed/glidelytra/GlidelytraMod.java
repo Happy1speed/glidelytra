@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.fabricmc.loader.api.FabricLoader;
 import net.happyspeed.glidelytra.block.ModBlocks;
 import net.happyspeed.glidelytra.block.custom.AcceleratorBlockEntity;
+import net.happyspeed.glidelytra.config.ModConfigs;
 import net.happyspeed.glidelytra.item.ModItemGroups;
 import net.happyspeed.glidelytra.item.ModItems;
 import net.happyspeed.glidelytra.sound.ModSounds;
@@ -33,5 +34,6 @@ public class GlidelytraMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModSounds.registerSounds();
 		Registry.register(Registries.PARTICLE_TYPE, new Identifier(MOD_ID, "ring_particle"), RING_PARTICLE);
+		ModConfigs.registerConfigs();
 	}
 }
