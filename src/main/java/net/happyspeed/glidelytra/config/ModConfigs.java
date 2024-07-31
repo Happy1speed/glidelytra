@@ -14,6 +14,7 @@ public class ModConfigs {
     public static int CONFIGFIREWORKCOOLDOWNMODIFIER;
     public static double CONFIGFIREWORKBOOSTAMPLIFIER;
     public static boolean CONFIGVANILLAELYTRADURRABILITY;
+    public static boolean CONFIGLESSELYTRADRAG;
 
     public static void registerConfigs() {
         configs = new ModConfigProvider();
@@ -31,6 +32,7 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("firework_cooldown_base", 240));
         configs.addKeyValuePair(new Pair<>("firework_cooldown_modifier", 140));
         configs.addKeyValuePair(new Pair<>("firework_boost_amplifier", 1.7));
+        configs.addKeyValuePair(new Pair<>("less_elytra_drag", true));
         configs.addKeyValuePair(new Pair<>("vanilla_elytra_durrability_behavior", false));
     }
 
@@ -41,6 +43,7 @@ public class ModConfigs {
         CONFIGFIREWORKCOOLDOWNBASE = CONFIG.getOrDefault("firework_cooldown_base", 240);
         CONFIGFIREWORKCOOLDOWNMODIFIER = CONFIG.getOrDefault("firework_cooldown_modifier", 140);
         CONFIGFIREWORKBOOSTAMPLIFIER = CONFIG.getOrDefault("firework_boost_amplifier", 1.7);
+        CONFIGLESSELYTRADRAG = CONFIG.getOrDefault("less_elytra_drag", true);
         CONFIGVANILLAELYTRADURRABILITY = CONFIG.getOrDefault("vanilla_elytra_durrability_behavior", false);
 
 

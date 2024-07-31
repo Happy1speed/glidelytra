@@ -11,7 +11,9 @@ import net.happyspeed.glidelytra.config.ModConfigs;
 import net.happyspeed.glidelytra.item.ModItemGroups;
 import net.happyspeed.glidelytra.item.ModItems;
 import net.happyspeed.glidelytra.sound.ModSounds;
+import net.happyspeed.glidelytra.status_effects.FastGlideEffect;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -26,6 +28,8 @@ public class GlidelytraMod implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final DefaultParticleType RING_PARTICLE = FabricParticleTypes.simple(true);
 
+	public static StatusEffect FAST_GLIDE_EFFECT = new FastGlideEffect();
+
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Glidelytra Mod Loading!");
@@ -34,6 +38,8 @@ public class GlidelytraMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModSounds.registerSounds();
 		Registry.register(Registries.PARTICLE_TYPE, new Identifier(MOD_ID, "ring_particle"), RING_PARTICLE);
+
+		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "fast_glide_effect"), FAST_GLIDE_EFFECT);
 		ModConfigs.registerConfigs();
 	}
 }

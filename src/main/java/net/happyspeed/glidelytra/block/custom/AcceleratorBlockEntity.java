@@ -9,6 +9,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BedBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.client.particle.Particle;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.MusicDiscItem;
@@ -258,12 +259,13 @@ public class AcceleratorBlockEntity extends BlockEntity  {
                     Vec3d vec3d = player.getRotationVector();
                     Vec3d vec3d2 = player.getVelocity();
                     if (acc.tryHardTest(world, pos, state, acc)) {
-                        boostSpeed = 5f;
+                        boostSpeed = 4f;
                     }
                     else {
-                        boostSpeed = 1.05f;
+                        boostSpeed = 1.04f;
                     }
                     boostSpeed += (float) Math.min(Math.max(50, pos.getY()), 180) * 0.02f;
+                    player.setStatusEffect(new StatusEffectInstance(GlidelytraMod.FAST_GLIDE_EFFECT, 300, 0, false, false, true), player);
                     player.setVelocity(vec3d2.add(vec3d.x + (vec3d.x * boostSpeed - vec3d2.x), vec3d.y + (vec3d.y * boostSpeed - vec3d2.y), vec3d.z + (vec3d.z * boostSpeed - vec3d2.z)));
                     player.velocityModified = true;
                 }
