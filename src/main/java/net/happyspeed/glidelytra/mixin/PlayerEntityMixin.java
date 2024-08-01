@@ -73,8 +73,8 @@ abstract class PlayerEntityMixin extends LivingEntity {
                         int da = 0;
                         int currentStackSlotE = player.getInventory().getSlotWithStack(player.getInventory().getStack(i));
                         if (player.getInventory().getStack(i).getItem() instanceof ElytraItem) {
-                            if (player.getInventory().getStack(i).getDamage() + 2 < player.getInventory().getStack(i).getMaxDamage()) {
-                                da = 2;
+                            if (player.getInventory().getStack(i).getDamage() + 3 < player.getInventory().getStack(i).getMaxDamage()) {
+                                da = 3;
                             }
                             else if (player.getInventory().getStack(i).getDamage() + 1 < player.getInventory().getStack(i).getMaxDamage()) {
                                 da = 1;

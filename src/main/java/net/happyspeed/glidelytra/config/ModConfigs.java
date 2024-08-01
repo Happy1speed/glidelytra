@@ -14,7 +14,9 @@ public class ModConfigs {
     public static int CONFIGFIREWORKCOOLDOWNMODIFIER;
     public static double CONFIGFIREWORKBOOSTAMPLIFIER;
     public static boolean CONFIGVANILLAELYTRADURRABILITY;
+    public static boolean CONFIGLIGHTERELYTRA;
     public static boolean CONFIGLESSELYTRADRAG;
+    public static boolean CONFIGEXPERIMENTALSUPERELYTRAGRAVITY;
 
     public static void registerConfigs() {
         configs = new ModConfigProvider();
@@ -31,8 +33,10 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("allow_elytra_disable", true));
         configs.addKeyValuePair(new Pair<>("firework_cooldown_base", 240));
         configs.addKeyValuePair(new Pair<>("firework_cooldown_modifier", 140));
-        configs.addKeyValuePair(new Pair<>("firework_boost_amplifier", 1.7));
+        configs.addKeyValuePair(new Pair<>("firework_boost_amplifier", 1.6));
         configs.addKeyValuePair(new Pair<>("less_elytra_drag", true));
+        configs.addKeyValuePair(new Pair<>("lighter_elytra", true));
+        configs.addKeyValuePair(new Pair<>("experimental_super_elytra_gravity", false));
         configs.addKeyValuePair(new Pair<>("vanilla_elytra_durrability_behavior", false));
     }
 
@@ -42,8 +46,10 @@ public class ModConfigs {
         CONFIGALLOWELYTRADISABLE = CONFIG.getOrDefault("allow_elytra_disable", true);
         CONFIGFIREWORKCOOLDOWNBASE = CONFIG.getOrDefault("firework_cooldown_base", 240);
         CONFIGFIREWORKCOOLDOWNMODIFIER = CONFIG.getOrDefault("firework_cooldown_modifier", 140);
-        CONFIGFIREWORKBOOSTAMPLIFIER = CONFIG.getOrDefault("firework_boost_amplifier", 1.7);
+        CONFIGFIREWORKBOOSTAMPLIFIER = CONFIG.getOrDefault("firework_boost_amplifier", 1.6);
         CONFIGLESSELYTRADRAG = CONFIG.getOrDefault("less_elytra_drag", true);
+        CONFIGLIGHTERELYTRA = CONFIG.getOrDefault("lighter_elytra", true);
+        CONFIGEXPERIMENTALSUPERELYTRAGRAVITY = CONFIG.getOrDefault("experimental_super_elytra_gravity", false);
         CONFIGVANILLAELYTRADURRABILITY = CONFIG.getOrDefault("vanilla_elytra_durrability_behavior", false);
 
 

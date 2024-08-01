@@ -37,36 +37,4 @@ abstract public class LivingEntityMixin extends Entity {
             return damage;
         }
     }
-
-    @ModifyArgs(method = "travel(Lnet/minecraft/util/math/Vec3d;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/Vec3d;multiply(DDD)Lnet/minecraft/util/math/Vec3d;", ordinal = 2))
-    private void modVelocity(Args args) {
-        if (ModConfigs.CONFIGLESSELYTRADRAG) {
-            if (this.hasStatusEffect(GlidelytraMod.FAST_GLIDE_EFFECT)) {
-                args.set(0, 0.994);
-                args.set(1, 0.98);
-                args.set(2, 0.994);
-            }
-        }
-    }
-
-//    @WrapOperation(method = "travel(Lnet/minecraft/util/math/Vec3d;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;setVelocity(Lnet/minecraft/util/math/Vec3d;)V", ordinal = 6))
-//    private void modDrag(LivingEntity instance, Vec3d vec3d, Operation<Void> original) {
-//        if (ModConfigs.CONFIGLESSELYTRADRAG) {
-//            //this.setVelocity(vec3d.multiply(0.99f, 0.98f, 0.99f));
-//            GlidelytraMod.LOGGER.info("GO");
-//        }
-//        else {
-//            original.call(instance, vec3d);
-//        }
-//    }
-
-//    @ModifyArg(method = "travel(Lnet/minecraft/util/math/Vec3d;)V", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;setVelocity(Lnet/minecraft/util/math/Vec3d;)V", ordinal = 6))
-//    private Vec3d lessDrag(Vec3d vector){
-////        Vec3d velo = vector.multiply(0.99f, 0.98f, 0.99f);
-////        if (velo != null)
-////            return velo;
-////        else
-////            return vector;
-//        return vector;
-//    }
 }

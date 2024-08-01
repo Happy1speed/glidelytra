@@ -38,11 +38,21 @@ abstract class FireworkRocketEntityMixin extends ProjectileEntity
 
 	@Shadow private int life;
 
+	@Unique private int boostHeight;
+
+	@Unique private boolean hadSetHeight = false;
+
 	public FireworkRocketEntityMixin(EntityType<? extends ProjectileEntity> entityType, World world) {
 		super(entityType, world);
 	}
 	@Unique
 	public double boostCode(double constant) {
+		if (!this.hadSetHeight) {
+			if (this.shooter != null) {
+				this.boostHeight = (int) this.shooter.getY();
+			}
+			this.hadSetHeight = true;
+        }
 		float boost = (float) ModConfigs.CONFIGFIREWORKBOOSTAMPLIFIER;
 		if (this.shooter != null) {
 			ItemStack itemStack;
@@ -70,6 +80,9 @@ abstract class FireworkRocketEntityMixin extends ProjectileEntity
 						boost += 0.6f;
 					}
 				}
+			}
+			if (this.boostHeight < 90) {
+				boost += (100 - Math.max(64, this.boostHeight)) * 0.02f;
 			}
 		}
 		return boost;
