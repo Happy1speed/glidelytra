@@ -21,8 +21,6 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static net.happyspeed.glidelytra.block.ModBlocks.AERIAL_ACCELERATOR_BLOCK;
-
 public class GlidelytraMod implements ModInitializer {
 	public static final String MOD_ID = "glidelytra";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);

@@ -16,6 +16,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.glidelytra"))
                     .icon(() -> new ItemStack(ModBlocks.AERIAL_ACCELERATOR_BLOCK)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.AERIAL_ACCELERATOR_BLOCK);
+                        entries.add(ModBlocks.CREATIVE_AERIAL_ACCELERATOR_BLOCK);
                         entries.add(ModItems.GLIDE_MAP_ONE_MUSIC_DISC);
                         entries.add(ModItems.GLIDE_MAP_TWO_MUSIC_DISC);
                         entries.add(ModItems.GLIDE_MAP_THREE_MUSIC_DISC);

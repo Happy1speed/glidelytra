@@ -3,6 +3,7 @@ package net.happyspeed.glidelytra.block.custom;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.happyspeed.glidelytra.GlidelytraMod;
 import net.happyspeed.glidelytra.block.ModBlocks;
+import net.happyspeed.glidelytra.config.ModConfigs;
 import net.happyspeed.glidelytra.sound.ModSounds;
 import net.happyspeed.glidelytra.util.ModTags;
 import net.minecraft.block.*;
@@ -262,10 +263,14 @@ public class AcceleratorBlockEntity extends BlockEntity  {
                         boostSpeed = 4f;
                     }
                     else {
-                        boostSpeed = 1.04f;
+                        boostSpeed = (float) ModConfigs.CONFIGBOOSTBLOCKAMPLIFIER;
                     }
-                    boostSpeed += (float) Math.min(Math.max(50, pos.getY()), 180) * 0.02f;
-                    player.setStatusEffect(new StatusEffectInstance(GlidelytraMod.FAST_GLIDE_EFFECT, 300, 0, false, false, true), player);
+                    if (ModConfigs.CONFIGBOOSTBLOCKHEIGHTMODIFIER) {
+                        boostSpeed += (float) Math.min(Math.max(50, pos.getY()), 180) * 0.02f;
+                    }
+                    if (ModConfigs.CONFIGGIVEFASTGLIDEEFFECT) {
+                        player.setStatusEffect(new StatusEffectInstance(GlidelytraMod.FAST_GLIDE_EFFECT, 300, 0, false, false, true), player);
+                    }
                     player.setVelocity(vec3d2.add(vec3d.x + (vec3d.x * boostSpeed - vec3d2.x), vec3d.y + (vec3d.y * boostSpeed - vec3d2.y), vec3d.z + (vec3d.z * boostSpeed - vec3d2.z)));
                     player.velocityModified = true;
                 }

@@ -1,13 +1,10 @@
 package net.happyspeed.glidelytra.block.custom;
 
-import net.happyspeed.glidelytra.GlidelytraMod;
 import net.happyspeed.glidelytra.block.ModBlocks;
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BeaconBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -17,17 +14,16 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
-public class BaseAcceleratorBlock extends BlockWithEntity implements BlockEntityProvider {
+public class CreativeBaseAcceleratorBlock extends BlockWithEntity implements BlockEntityProvider {
 
-    public BaseAcceleratorBlock(Settings settings) {
+    public CreativeBaseAcceleratorBlock(Settings settings) {
         super(settings);
     }
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new AcceleratorBlockEntity(pos, state);
+        return new CreativeAcceleratorBlockEntity(pos, state);
     }
     @Override
     public BlockRenderType getRenderType(BlockState state) {
@@ -36,7 +32,7 @@ public class BaseAcceleratorBlock extends BlockWithEntity implements BlockEntity
 
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlocks.ACCELERATOR_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, (world1, pos, state1, be) -> AcceleratorBlockEntity.tick(world1, pos, state1, be));
+        return checkType(type, ModBlocks.CREATIVE_ACCELERATOR_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, (world1, pos, state1, be) -> CreativeAcceleratorBlockEntity.tick(world1, pos, state1, be));
     }
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
         if (world.getTime() % 20L == 0L) {
@@ -50,14 +46,6 @@ public class BaseAcceleratorBlock extends BlockWithEntity implements BlockEntity
     @Override
     public boolean hasDynamicBounds() {
         return super.hasDynamicBounds();
-    }
-
-    @Override
-    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        if (world.getBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ())).isOf(ModBlocks.PHANTOM_MEMBRANE_GEL_BLOCK)) {
-            return VoxelShapes.empty();
-        }
-        return super.getCollisionShape(state, world, pos, context);
     }
     @Override
     public boolean isSideInvisible(BlockState state, BlockState stateFrom, Direction direction) {

@@ -6,6 +6,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityT
 import net.happyspeed.glidelytra.GlidelytraMod;
 import net.happyspeed.glidelytra.block.custom.AcceleratorBlockEntity;
 import net.happyspeed.glidelytra.block.custom.BaseAcceleratorBlock;
+import net.happyspeed.glidelytra.block.custom.CreativeAcceleratorBlockEntity;
+import net.happyspeed.glidelytra.block.custom.CreativeBaseAcceleratorBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
@@ -19,7 +21,10 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
     public static final Block AERIAL_ACCELERATOR_BLOCK = registerBlock("aerial_accelerator",
             new BaseAcceleratorBlock(FabricBlockSettings.copyOf(Blocks.DIRT).hardness(0.3f).sounds(BlockSoundGroup.NETHERITE).notSolid().nonOpaque().suffocates(Blocks::never).blockVision(Blocks::never)));
+    public static final Block CREATIVE_AERIAL_ACCELERATOR_BLOCK = registerBlock("creative_aerial_accelerator",
+            new CreativeBaseAcceleratorBlock(FabricBlockSettings.copyOf(Blocks.DIRT).hardness(0.5f).sounds(BlockSoundGroup.GLASS).notSolid().nonOpaque().suffocates(Blocks::never).collidable(false).blockVision(Blocks::never)));
     public static final BlockEntityType <AcceleratorBlockEntity> ACCELERATOR_BLOCK_ENTITY_BLOCK_ENTITY_TYPE = registerBlockEntity("accelerator_block_entity", FabricBlockEntityTypeBuilder.create(AcceleratorBlockEntity::new, AERIAL_ACCELERATOR_BLOCK));
+    public static final BlockEntityType <CreativeAcceleratorBlockEntity> CREATIVE_ACCELERATOR_BLOCK_ENTITY_BLOCK_ENTITY_TYPE = registerBlockEntity("creative_accelerator_block_entity", FabricBlockEntityTypeBuilder.create(CreativeAcceleratorBlockEntity::new, CREATIVE_AERIAL_ACCELERATOR_BLOCK));
     public static final Block PHANTOM_MEMBRANE_GEL_BLOCK = registerBlock("phantom_membrane_gel_block", new TransparentBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).collidable(false).nonOpaque()));
     public static final Block SMOOTH_PHANTOM_MEMBRANE_GEL_BLOCK = registerBlock("smooth_phantom_membrane_gel_block", new TransparentBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).collidable(false).nonOpaque()));
     public static final Block PURE_PHANTOM_MEMBRANE_GEL_BLOCK = registerBlock("pure_phantom_membrane_gel_block", new TransparentBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).collidable(false).nonOpaque().luminance(8)));

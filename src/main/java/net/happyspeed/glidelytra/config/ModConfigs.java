@@ -17,6 +17,9 @@ public class ModConfigs {
     public static boolean CONFIGLIGHTERELYTRA;
     public static boolean CONFIGLESSELYTRADRAG;
     public static boolean CONFIGEXPERIMENTALSUPERELYTRAGRAVITY;
+    public static double CONFIGBOOSTBLOCKAMPLIFIER;
+    public static boolean CONFIGGIVEFASTGLIDEEFFECT;
+    public static boolean CONFIGBOOSTBLOCKHEIGHTMODIFIER;
 
     public static void registerConfigs() {
         configs = new ModConfigProvider();
@@ -38,6 +41,9 @@ public class ModConfigs {
         configs.addKeyValuePair(new Pair<>("lighter_elytra", true));
         configs.addKeyValuePair(new Pair<>("experimental_super_elytra_gravity", false));
         configs.addKeyValuePair(new Pair<>("vanilla_elytra_durrability_behavior", false));
+        configs.addKeyValuePair(new Pair<>("boost_block_amplifier", 1.04));
+        configs.addKeyValuePair(new Pair<>("give_fast_glide_effect", true));
+        configs.addKeyValuePair(new Pair<>("boost_block_height_modifier", true));
     }
 
     private static void assignConfigs() {
@@ -51,6 +57,9 @@ public class ModConfigs {
         CONFIGLIGHTERELYTRA = CONFIG.getOrDefault("lighter_elytra", true);
         CONFIGEXPERIMENTALSUPERELYTRAGRAVITY = CONFIG.getOrDefault("experimental_super_elytra_gravity", false);
         CONFIGVANILLAELYTRADURRABILITY = CONFIG.getOrDefault("vanilla_elytra_durrability_behavior", false);
+        CONFIGBOOSTBLOCKAMPLIFIER = CONFIG.getOrDefault("boost_block_amplifier", 1.04);
+        CONFIGGIVEFASTGLIDEEFFECT = CONFIG.getOrDefault("give_fast_glide_effect", true);
+        CONFIGBOOSTBLOCKHEIGHTMODIFIER = CONFIG.getOrDefault("boost_block_height_modifier", true);
 
 
         System.out.println("All " + configs.getConfigsList().size() + " have been set properly");
