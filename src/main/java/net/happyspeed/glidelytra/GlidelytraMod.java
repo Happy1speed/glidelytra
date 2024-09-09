@@ -25,6 +25,7 @@ public class GlidelytraMod implements ModInitializer {
 	public static final String MOD_ID = "glidelytra";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static final DefaultParticleType RING_PARTICLE = FabricParticleTypes.simple(true);
+	public static final DefaultParticleType CA_PARTICLE = FabricParticleTypes.simple(true);
 
 	public static StatusEffect FAST_GLIDE_EFFECT = new FastGlideEffect();
 
@@ -36,6 +37,7 @@ public class GlidelytraMod implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModSounds.registerSounds();
 		Registry.register(Registries.PARTICLE_TYPE, new Identifier(MOD_ID, "ring_particle"), RING_PARTICLE);
+		Registry.register(Registries.PARTICLE_TYPE, new Identifier(MOD_ID, "ca_particle"), CA_PARTICLE);
 
 		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "fast_glide_effect"), FAST_GLIDE_EFFECT);
 		ModConfigs.registerConfigs();

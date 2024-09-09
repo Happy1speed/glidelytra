@@ -1,5 +1,6 @@
 package net.happyspeed.glidelytra.block.custom;
 
+import net.happyspeed.glidelytra.GlidelytraMod;
 import net.happyspeed.glidelytra.block.ModBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -27,7 +28,7 @@ public class CreativeBaseAcceleratorBlock extends BlockWithEntity implements Blo
     }
     @Override
     public BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
+        return BlockRenderType.INVISIBLE;
     }
 
     @Override
@@ -35,6 +36,7 @@ public class CreativeBaseAcceleratorBlock extends BlockWithEntity implements Blo
         return checkType(type, ModBlocks.CREATIVE_ACCELERATOR_BLOCK_ENTITY_BLOCK_ENTITY_TYPE, (world1, pos, state1, be) -> CreativeAcceleratorBlockEntity.tick(world1, pos, state1, be));
     }
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+        world.addParticle(GlidelytraMod.CA_PARTICLE, true, (double) pos.getX() + 0.5, (double) pos.getY() + 0.5, (double) pos.getZ() + 0.5, 0.0, 0.0, 0.0);
         if (world.getTime() % 20L == 0L) {
             double d = (double) pos.getX() + 0.5;
             double e = pos.getY() + 0.1;
