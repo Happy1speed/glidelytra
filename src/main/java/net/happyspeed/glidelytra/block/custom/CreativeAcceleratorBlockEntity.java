@@ -97,22 +97,25 @@ public class CreativeAcceleratorBlockEntity extends BlockEntity  {
                 continue;
             }
             if (player.isFallFlying() || player.isUsingRiptide() || player.isSwimming()) {
-                if (acc.soundTimer > 39) {
-                    world.playSound(null, playerPosition.x, playerPosition.y, playerPosition.z, ModSounds.PLING_SOUND, SoundCategory.PLAYERS, 1.0f, 1.0f);
-                    acc.soundTimer = 0;
+                if (!player.hasStatusEffect(GlidelytraMod.BOOST_COOLDOWN_EFFECT)) {
+                    if (acc.soundTimer > 39) {
+                        world.playSound(null, playerPosition.x, playerPosition.y, playerPosition.z, ModSounds.PLING_SOUND, SoundCategory.PLAYERS, 1.0f, 1.0f);
+                        acc.soundTimer = 0;
+                    }
+                    float boostSpeed;
+                    Vec3d vec3d = player.getRotationVector();
+                    Vec3d vec3d2 = player.getVelocity();
+                    boostSpeed = (float) ModConfigs.CONFIGBOOSTBLOCKAMPLIFIER;
+                    if (ModConfigs.CONFIGBOOSTBLOCKHEIGHTMODIFIER) {
+                        boostSpeed += (float) Math.min(Math.max(50, pos.getY()), 180) * 0.02f;
+                    }
+                    if (ModConfigs.CONFIGGIVEFASTGLIDEEFFECT) {
+                        player.setStatusEffect(new StatusEffectInstance(GlidelytraMod.FAST_GLIDE_EFFECT, 300, 0, false, false, true), player);
+                    }
+                    player.setVelocity(vec3d2.add((vec3d.x + (vec3d.x * boostSpeed - vec3d2.x)) * 0.05f, (vec3d.y + (vec3d.y * boostSpeed - vec3d2.y) * 0.05f),  (vec3d.z + (vec3d.z * boostSpeed - vec3d2.z)) * 0.05f));
+                    player.velocityModified = true;
+                    player.setStatusEffect(new StatusEffectInstance(GlidelytraMod.BOOST_COOLDOWN_EFFECT, 20, 0, false, false, false), player);
                 }
-                float boostSpeed;
-                Vec3d vec3d = player.getRotationVector();
-                Vec3d vec3d2 = player.getVelocity();
-                boostSpeed = (float) ModConfigs.CONFIGBOOSTBLOCKAMPLIFIER;
-                if (ModConfigs.CONFIGBOOSTBLOCKHEIGHTMODIFIER) {
-                    boostSpeed += (float) Math.min(Math.max(50, pos.getY()), 180) * 0.02f;
-                }
-                if (ModConfigs.CONFIGGIVEFASTGLIDEEFFECT) {
-                    player.setStatusEffect(new StatusEffectInstance(GlidelytraMod.FAST_GLIDE_EFFECT, 300, 0, false, false, true), player);
-                }
-                player.setVelocity(vec3d2.add(vec3d.x + (vec3d.x * boostSpeed - vec3d2.x), vec3d.y + (vec3d.y * boostSpeed - vec3d2.y), vec3d.z + (vec3d.z * boostSpeed - vec3d2.z)));
-                player.velocityModified = true;
             }
         }
     }

@@ -25,6 +25,12 @@ public class FireworkRocketItemMixin extends Item {
     public FireworkRocketItemMixin(Settings settings) {
         super(settings);
     }
+    @Inject(method = "use", at = @At(value = "HEAD"))
+    public void cancelUse(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
+        if (!ModConfigs.CONFIGFIREWORKBOOSTINGENABLED && user.isFallFlying()) {
+            cir.cancel();
+        }
+    }
     @Inject(method = "use", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;spawnEntity(Lnet/minecraft/entity/Entity;)Z"))
     public void stackedCooldown(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
         if (ModConfigs.CONFIGFIREWORKCOOLDOWN) {

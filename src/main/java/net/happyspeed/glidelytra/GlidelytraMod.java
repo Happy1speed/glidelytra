@@ -28,6 +28,7 @@ public class GlidelytraMod implements ModInitializer {
 	public static final DefaultParticleType CA_PARTICLE = FabricParticleTypes.simple(true);
 
 	public static StatusEffect FAST_GLIDE_EFFECT = new FastGlideEffect();
+	public static StatusEffect BOOST_COOLDOWN_EFFECT = new FastGlideEffect();
 
 	@Override
 	public void onInitialize() {
@@ -40,6 +41,7 @@ public class GlidelytraMod implements ModInitializer {
 		Registry.register(Registries.PARTICLE_TYPE, new Identifier(MOD_ID, "ca_particle"), CA_PARTICLE);
 
 		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "fast_glide_effect"), FAST_GLIDE_EFFECT);
+		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "boost_cooldown_effect"), BOOST_COOLDOWN_EFFECT);
 		ModConfigs.registerConfigs();
 	}
 }

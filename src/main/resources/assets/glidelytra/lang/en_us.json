@@ -28,5 +28,8 @@
 
   "glidelytra.pling_sound_sub": "Pling!",
 
+  "effect.glidelytra.boost_cooldown_effect": "Boost Cooldown Effect",
+  "effect.glidelytra.fast_glide_effect": "Fast Glide Effect",
+
   "itemgroup.glidelytra": "Glide-lytra"
 }
