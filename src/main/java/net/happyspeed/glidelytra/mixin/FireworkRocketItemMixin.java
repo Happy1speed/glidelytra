@@ -25,9 +25,10 @@ public class FireworkRocketItemMixin extends Item {
     public FireworkRocketItemMixin(Settings settings) {
         super(settings);
     }
-    @Inject(method = "use", at = @At(value = "HEAD"))
+    @Inject(method = "use", at = @At(value = "HEAD"), cancellable = true)
     public void cancelUse(World world, PlayerEntity user, Hand hand, CallbackInfoReturnable<TypedActionResult<ItemStack>> cir) {
         if (!ModConfigs.CONFIGFIREWORKBOOSTINGENABLED && user.isFallFlying()) {
+            cir.setReturnValue(TypedActionResult.pass(user.getStackInHand(hand)));
             cir.cancel();
         }
     }
