@@ -30,6 +30,7 @@
 
   "effect.glidelytra.boost_cooldown_effect": "Boost Cooldown Effect",
   "effect.glidelytra.fast_glide_effect": "Fast Glide Effect",
+  "effect.glidelytra.boosting_effect": "Boosting Effect",
 
   "itemgroup.glidelytra": "Glide-lytra"
 }

@@ -11,6 +11,7 @@ import net.happyspeed.glidelytra.config.ModConfigs;
 import net.happyspeed.glidelytra.item.ModItemGroups;
 import net.happyspeed.glidelytra.item.ModItems;
 import net.happyspeed.glidelytra.sound.ModSounds;
+import net.happyspeed.glidelytra.status_effects.BoosingEffect;
 import net.happyspeed.glidelytra.status_effects.FastGlideEffect;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.effect.StatusEffect;
@@ -29,6 +30,7 @@ public class GlidelytraMod implements ModInitializer {
 
 	public static StatusEffect FAST_GLIDE_EFFECT = new FastGlideEffect();
 	public static StatusEffect BOOST_COOLDOWN_EFFECT = new FastGlideEffect();
+	public static StatusEffect BOOSTING_EFFECT = new BoosingEffect();
 
 	@Override
 	public void onInitialize() {
@@ -42,6 +44,7 @@ public class GlidelytraMod implements ModInitializer {
 
 		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "fast_glide_effect"), FAST_GLIDE_EFFECT);
 		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "boost_cooldown_effect"), BOOST_COOLDOWN_EFFECT);
+		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "boosting_effect"), BOOSTING_EFFECT);
 		ModConfigs.registerConfigs();
 	}
 }
