@@ -17,6 +17,7 @@ public class GlidelytraModClient implements ClientModInitializer {
         ParticleFactoryRegistry.getInstance().register(GlidelytraMod.RING_PARTICLE, RingParticleBase.RingFactory::new);
         ParticleFactoryRegistry.getInstance().register(GlidelytraMod.CA_PARTICLE, CAParticleBase.CAFactory::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.AERIAL_ACCELERATOR_BLOCK, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.UPDRAFT_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.CREATIVE_AERIAL_ACCELERATOR_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PHANTOM_MEMBRANE_GEL_BLOCK, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SMOOTH_PHANTOM_MEMBRANE_GEL_BLOCK, RenderLayer.getCutout());

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " U ",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:campfire"
+    },
+    "U": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "glidelytra:updraft_block",
+    "count": 1
+  }
+}

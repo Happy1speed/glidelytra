@@ -4,6 +4,7 @@
   "block.glidelytra.phantom_membrane_gel_block": "Phantom Membrane Gel Block",
   "block.glidelytra.smooth_phantom_membrane_gel_block": "Smooth Phantom Membrane Gel Block",
   "block.glidelytra.pure_phantom_membrane_gel_block": "Pure Phantom Membrane Gel Block",
+  "block.glidelytra.updraft_block": "Updraft Block",
 
   "item.glidelytra.glide_map_one_music_disc": "Glide: Map 1 Music Disc",
   "item.glidelytra.glide_map_one_music_disc.desc": "Gareth Coker - Glide (Map 1)",
@@ -31,6 +32,7 @@
   "effect.glidelytra.boost_cooldown_effect": "Boost Cooldown Effect",
   "effect.glidelytra.fast_glide_effect": "Fast Glide Effect",
   "effect.glidelytra.boosting_effect": "Boosting Effect",
+  "effect.glidelytra.updraft_effect": "Updraft Effect",
 
   "itemgroup.glidelytra": "Glide-lytra"
 }

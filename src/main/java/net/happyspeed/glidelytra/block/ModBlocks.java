@@ -4,10 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.happyspeed.glidelytra.GlidelytraMod;
-import net.happyspeed.glidelytra.block.custom.AcceleratorBlockEntity;
-import net.happyspeed.glidelytra.block.custom.BaseAcceleratorBlock;
-import net.happyspeed.glidelytra.block.custom.CreativeAcceleratorBlockEntity;
-import net.happyspeed.glidelytra.block.custom.CreativeBaseAcceleratorBlock;
+import net.happyspeed.glidelytra.block.custom.*;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
@@ -28,6 +25,10 @@ public class ModBlocks {
     public static final Block PHANTOM_MEMBRANE_GEL_BLOCK = registerBlock("phantom_membrane_gel_block", new TransparentBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).collidable(false).nonOpaque()));
     public static final Block SMOOTH_PHANTOM_MEMBRANE_GEL_BLOCK = registerBlock("smooth_phantom_membrane_gel_block", new TransparentBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).collidable(false).nonOpaque()));
     public static final Block PURE_PHANTOM_MEMBRANE_GEL_BLOCK = registerBlock("pure_phantom_membrane_gel_block", new TransparentBlock(FabricBlockSettings.copyOf(Blocks.SLIME_BLOCK).collidable(false).nonOpaque().luminance(8)));
+
+    public static final Block UPDRAFT_BLOCK = registerBlock("updraft_block",
+            new BaseUpdraftBlock(FabricBlockSettings.copyOf(Blocks.DIRT).hardness(0.3f).sounds(BlockSoundGroup.WOOD).notSolid().nonOpaque().suffocates(Blocks::never).blockVision(Blocks::never).luminance(state -> 15)));
+    public static final BlockEntityType <UpdraftBlockEntity> UPDRAFT_BLOCK_ENTITY_BLOCK_ENTITY_TYPE = registerBlockEntity("updraft_block_entity", FabricBlockEntityTypeBuilder.create(UpdraftBlockEntity::new, UPDRAFT_BLOCK));
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(GlidelytraMod.MOD_ID, name), block);
