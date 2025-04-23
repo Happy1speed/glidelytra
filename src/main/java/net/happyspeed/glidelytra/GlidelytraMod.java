@@ -13,6 +13,7 @@ import net.happyspeed.glidelytra.item.ModItems;
 import net.happyspeed.glidelytra.sound.ModSounds;
 import net.happyspeed.glidelytra.status_effects.BoosingEffect;
 import net.happyspeed.glidelytra.status_effects.FastGlideEffect;
+import net.happyspeed.glidelytra.status_effects.SkippingEffect;
 import net.happyspeed.glidelytra.status_effects.UpdraftEffect;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.effect.StatusEffect;
@@ -32,6 +33,7 @@ public class GlidelytraMod implements ModInitializer {
 	public static StatusEffect FAST_GLIDE_EFFECT = new FastGlideEffect();
 	public static StatusEffect BOOST_COOLDOWN_EFFECT = new FastGlideEffect();
 	public static StatusEffect BOOSTING_EFFECT = new BoosingEffect();
+	public static StatusEffect SKIPPING_EFFECT = new SkippingEffect();
 	public static StatusEffect UPDRAFT_EFFECT = new UpdraftEffect();
 
 	@Override
@@ -48,6 +50,7 @@ public class GlidelytraMod implements ModInitializer {
 		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "boost_cooldown_effect"), BOOST_COOLDOWN_EFFECT);
 		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "boosting_effect"), BOOSTING_EFFECT);
 		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "updraft_effect"), UPDRAFT_EFFECT);
+		Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "skipping_effect"), SKIPPING_EFFECT);
 		ModConfigs.registerConfigs();
 	}
 }

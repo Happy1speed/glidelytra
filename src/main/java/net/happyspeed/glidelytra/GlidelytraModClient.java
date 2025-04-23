@@ -6,9 +6,6 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.happyspeed.glidelytra.block.ModBlocks;
 import net.happyspeed.glidelytra.client.particle.CAParticleBase;
 import net.happyspeed.glidelytra.client.particle.RingParticleBase;
-import net.minecraft.client.particle.EndRodParticle;
-import net.minecraft.client.particle.FireworksSparkParticle;
-import net.minecraft.client.particle.GlowParticle;
 import net.minecraft.client.render.RenderLayer;
 
 public class GlidelytraModClient implements ClientModInitializer {

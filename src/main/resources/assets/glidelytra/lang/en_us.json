@@ -33,6 +33,7 @@
   "effect.glidelytra.fast_glide_effect": "Fast Glide Effect",
   "effect.glidelytra.boosting_effect": "Boosting Effect",
   "effect.glidelytra.updraft_effect": "Updraft Effect",
+  "effect.glidelytra.skipping_effect": "Skipping Effect",
 
   "itemgroup.glidelytra": "Glide-lytra"
 }

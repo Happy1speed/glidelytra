@@ -29,6 +29,9 @@ public class ModBlocks {
     public static final Block UPDRAFT_BLOCK = registerBlock("updraft_block",
             new BaseUpdraftBlock(FabricBlockSettings.copyOf(Blocks.DIRT).hardness(0.3f).sounds(BlockSoundGroup.WOOD).notSolid().nonOpaque().suffocates(Blocks::never).blockVision(Blocks::never).luminance(state -> 15)));
     public static final BlockEntityType <UpdraftBlockEntity> UPDRAFT_BLOCK_ENTITY_BLOCK_ENTITY_TYPE = registerBlockEntity("updraft_block_entity", FabricBlockEntityTypeBuilder.create(UpdraftBlockEntity::new, UPDRAFT_BLOCK));
+
+    //todo: No Collision Updraft Block
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(GlidelytraMod.MOD_ID, name), block);
